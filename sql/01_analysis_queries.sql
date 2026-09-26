@@ -1,0 +1,3 @@
+SELECT crop,SUM(area_hectares*yield_tons_per_hectare) estimated_production_tons,AVG(yield_tons_per_hectare) average_yield FROM crop_production GROUP BY crop ORDER BY estimated_production_tons DESC;
+SELECT state,AVG(market_price_per_ton) avg_market_price,AVG(revenue_per_hectare) avg_revenue FROM crop_production GROUP BY state;
+SELECT crop,YEAR(month) year,MONTH(month) month_number,AVG(yield_tons_per_hectare) avg_yield FROM crop_production GROUP BY crop,YEAR(month),MONTH(month);
